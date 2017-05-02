@@ -1,0 +1,30 @@
+---
+# Style of environment to build: vagrant, test or prod
+environment_name: "vagrant"
+
+# Local credentials
+# additional shell accounts
+users:
+  - name: ''
+    groups: 'wheel'
+    pubkey: ''
+
+ssh_brokers:
+  - alias: 'localhost'
+    ip: '127.0.0.1'
+    dn_suffix: 'localdomain'
+
+syslogng_client_ip: 10.255.255.11
+syslogng_dn_prefix: syslogngclient
+syslogng_dn_suffix: vagrant.localdomain
+
+yslogng_server_ip: 10.255.255.10
+syslogng_server_prefix: syslogng
+syslogng_server_suffix: vagrant.localdomain
+syslogng_server_protocol: tls
+syslogng_server_port: 514
+
+syslogng_server_cert: |
+  -----BEGIN CERTIFICATE-----
+  <paste server certificate>
+  -----END CERTIFICATE-----
